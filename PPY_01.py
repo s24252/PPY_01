@@ -41,26 +41,27 @@ if number % number2 == 0:
 else:
   result = "not devided"
 print("The number is", result)
-#task 6
+#task 6 (corrected)
 side1 = float(input("Enter the length of side 1: "))
 side2 = float(input("Enter the length of side 2: "))
 side3 = float(input("Enter the length of side 3: "))
 is_triange = "true";
 
-if side1 == side2 == side3:
-    triangle_type = "Equilateral"
-elif side1 == side2 or side1 == side3 or side2 == side3:
-    triangle_type = "Isosceles"
-else:
-    triangle_type = "Scalene"
-
 if side1 + side2 > side3 or side1 + side3 > side2 or side2 + side3 > side1 :
     is_triange = "false"
-if side1 <= 0 or side2 <= 0 or side3 <= 0:
+elif side1 <= 0 or side2 <= 0 or side3 <= 0:
     is_triange = "false"
+else:
+    if side1 == side2 == side3:
+        triangle_type = "Equilateral"
+        print("The triangle is:", triangle_type)
+    elif side1 == side2 or side1 == side3 or side2 == side3:
+        triangle_type = "Isosceles"
+        print("The triangle is:", triangle_type)
+    else:
+        triangle_type = "Scalene"
+        print("The triangle is:", triangle_type)
 
-
-print("The triangle is:", triangle_type)
 print("Is triangle: ", is_triange)
 
 #task 7
